@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <thread>
+#include "SimpleIni.h"
 
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -26,6 +27,14 @@
 
 HWND robloxHWND;
 bool isEnabled = false;
+int letterbox = 5; // Just how much to move the mouse back by to prevent it from being stuck LUL
+int toggleKey = VK_INSERT;
+std::string toggleKeyName = "INSERT";
+
+int leftBorder = 30;
+int rightBorder = 20;
+int topBorder = 70;
+int bottomBorder = 20;
 
 int mode = 1;
 
@@ -33,6 +42,32 @@ std::string convert(wchar_t* lab) {
     std::wstring ws(lab);
     std::string str(ws.begin(), ws.end());
     return str;
+}
+
+std::string GetKeyText(UCHAR virtualKey)
+{ // "Borrowed" from https://stackoverflow.com/a/38107083
+    UINT scanCode = MapVirtualKey(virtualKey, MAPVK_VK_TO_VSC);
+
+    CHAR szName[128];
+    int result = 0;
+    switch (virtualKey)
+    {
+    case VK_LEFT: case VK_UP: case VK_RIGHT: case VK_DOWN:
+    case VK_RCONTROL: case VK_RMENU:
+    case VK_LWIN: case VK_RWIN: case VK_APPS:
+    case VK_PRIOR: case VK_NEXT:
+    case VK_END: case VK_HOME:
+    case VK_INSERT: case VK_DELETE:
+    case VK_DIVIDE:
+    case VK_NUMLOCK:
+        scanCode |= KF_EXTENDED;
+    default:
+        result = GetKeyNameTextA(scanCode << 16, szName, 128);
+    }
+    if (result == 0)
+        throw std::system_error(std::error_code(GetLastError(), std::system_category()),
+            "WinAPI Error occured.");
+    return szName;
 }
 
 bool isRbxActive()
@@ -93,22 +128,21 @@ void fixCursor(HWND handle)
                     POINT realP;
                     if (GetCursorPos(&realP))
                     {
-                        // Don't judge this :(
                         if (p.x < 30)
                         {
-                            SetCursorPos(rect.left + 100, realP.y);
+                            SetCursorPos(rect.left + leftBorder + letterbox, realP.y);
                         }
-                        else if (p.x > sizeX - 40)
+                        else if (p.x > sizeX - 20)
                         {
-                            SetCursorPos(rect.right - 100, realP.y);
+                            SetCursorPos(rect.right - rightBorder - letterbox, realP.y);
                         }
                         else if (p.y < 70)
                         {
-                            SetCursorPos(realP.x, rect.top + 100);
+                            SetCursorPos(realP.x, rect.top + topBorder + letterbox);
                         }
-                        else if (p.y > sizeY - 40)
+                        else if (p.y > sizeY - 20)
                         {
-                            SetCursorPos(realP.x, rect.bottom - 100);
+                            SetCursorPos(realP.x, rect.bottom - bottomBorder - letterbox);
                         }
                     }
                 }
@@ -146,7 +180,7 @@ void init()
     std::cout << KBLU;
     std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
     std::cout << KYEL;
-    std::cout << BOLD("Keybind: ") << "INSERT" << std::endl;
+    std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;
     std::cout << KCYN;
     std::cout << BOLD("Enabled: ") << (isEnabled ? "Enabled" : "Disabled");
 }
@@ -168,14 +202,14 @@ void toggle()
 {
     while (true)
     {
-        if (GetAsyncKeyState(VK_INSERT))
+        if (GetAsyncKeyState(toggleKey))
         {
             isEnabled = not isEnabled;
             system("cls");
             std::cout << KBLU;
             std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
             std::cout << KYEL;
-            std::cout << BOLD("Keybind: ") << "INSERT" << std::endl;
+            std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;
             std::cout << KCYN;
             std::cout << BOLD("Enabled: ") << (isEnabled ? "Enabled" : "Disabled");
             Sleep(1000);
@@ -186,6 +220,17 @@ void toggle()
 
 int main()
 {
+    CSimpleIniA ini;
+    ini.LoadFile("config.ini");
+    const char* section = "Settings";
+    toggleKey = static_cast<int>(ini.GetLongValue(section, "ToggleKey", VK_END));
+    toggleKeyName = GetKeyText(toggleKey);
+
+    leftBorder = static_cast<int>(ini.GetLongValue(section, "LeftBorder", 30));
+    rightBorder = static_cast<int>(ini.GetLongValue(section, "RightBorder", 20));
+    topBorder = static_cast<int>(ini.GetLongValue(section, "TopBorder", 70));
+    bottomBorder = static_cast<int>(ini.GetLongValue(section, "BottomBorder", 20));
+
     std::cout << KYEL << "1. Force Center Lock\n2. Lock Border\n\n";
     std::cout << KCYN << "Input: ";
     std::cin >> mode;
