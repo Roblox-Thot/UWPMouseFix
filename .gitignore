@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/MicrosoftRBX-FPS/x64
+/MicrosoftRBX-FPS/MicrosoftRBX-FPS/x64
+/MicrosoftRBX-FPS/.vs/MicrosoftRBX-FPS
