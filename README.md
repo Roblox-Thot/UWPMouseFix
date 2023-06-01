@@ -24,5 +24,8 @@
 4. **How do i uninstall CursorFix?**
 - Simply just by closing the application and deleting it.
 
+5. **Will the keybind support multi-key keybinds?**
+- Lmao na I'm way to lazy to add support for that.  Feel free to add code to do it tho its prob not hard.
+
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
