@@ -1,3 +1,7 @@
+<div align="center">
+<h1 id="roblox-mouse-fix">UWP Mouse Fix 🐭</h1>
+</div>
+
 ## Usage
 1. Download the zip by downloading the [latest zip](https://github.com/Roblox-Thot/microsoftrbx-cursor-fix/releases/latest)
 2. Extract the zip and rename `config.example.ini` to `config.ini`
