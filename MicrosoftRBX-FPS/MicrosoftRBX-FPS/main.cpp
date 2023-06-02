@@ -253,8 +253,8 @@ int main()
     topBorder = static_cast<int>(ini.GetLongValue(section, "TopBorder", 70));
     bottomBorder = static_cast<int>(ini.GetLongValue(section, "BottomBorder", 20));
 
-    //std::cout << KYEL << "1. Force Center Lock\n2. Lock Border\n3. Right Click lock\n\n";
-    // Printing Strings stored in 2D array
+    std::cout << KRED;
+    std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
     for (int i = 0; i < 3; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
     std::cout << KCYN << "\nInput: ";
