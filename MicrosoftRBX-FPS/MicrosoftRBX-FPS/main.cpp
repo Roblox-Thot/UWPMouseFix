@@ -262,7 +262,7 @@ int main()
 
     if (mode == 1 || mode == 2 || mode == 3)
     {
-        SetConsoleTitleA("MicrosoftRBX-CursorFix");
+        SetConsoleTitleA("UWPMouseFix");
         std::thread mainThread(init);
         std::thread checkThread(check);
         std::thread toggleThread(toggle);
