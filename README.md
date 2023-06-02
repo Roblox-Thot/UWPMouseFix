@@ -13,7 +13,7 @@
 ## FAQ
 1. **Why is anti virus detecting it?**
 - It shouldn't because the application just sets the mouse to prevent moving out the window of Roblox.
-- But here is a virus scan anyway: [hybrid-analysis](https://www.hybrid-analysis.com/sample/bca470de73fd7c3f1fccc84c781d11456f81173071082755d85246690cd2cca2)
+- But here is a virus scan anyway: [hybrid-analysis](https://www.hybrid-analysis.com/sample/bca470de73fd7c3f1fccc84c781d11456f81173071082755d85246690cd2cca2) and [VirusTotal](https://www.virustotal.com/gui/file/bca470de73fd7c3f1fccc84c781d11456f81173071082755d85246690cd2cca2)
 
 2. **How to turn it on or off?**
 - Press `INSERT` key or what ever you set to turn on and off.
