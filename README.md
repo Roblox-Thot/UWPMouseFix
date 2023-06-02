@@ -8,7 +8,7 @@
 7. To toggle press `INSERT` key.
 
 ## Anti Cheat
-- **This application is completely harmless for `Roblox` because it has no injection or anything to touch into `Roblox` this is just keeping mouse position on the same place.**
+- **This application is completely harmless for `Roblox` because it has no injection and won't touch the `Roblox` process, this is just keeping mouse position on the same place.**
 
 ## FAQ
 1. **Why is anti virus detecting it?**
