@@ -31,5 +31,17 @@
 5. **Will the keybind support multi-key keybinds?**
 - Lmao na I'm way to lazy to add support for that.  Feel free to add code to do it tho its prob not hard.
 
+<div align="center">
+<h1 id="roblox-mouse-fix">How to build</h1>
+</div>
+<details>
+  <summary>click to expand</summary>
+  <blockquote>
+    To build you will need to download <a href="https://github.com/brofield/simpleini">simpleini</a> and import SimpleIni.h and ConvertUTF.h<br>
+    It should then be able to build.<br>
+    If you want the blank config its at <a href="/config.example.ini">config.example.ini</a><br>
+  </blockquote>
+</details>
+
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
