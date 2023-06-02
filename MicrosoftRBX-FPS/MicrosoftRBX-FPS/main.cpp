@@ -37,6 +37,7 @@ int topBorder = 70;
 int bottomBorder = 20;
 
 int mode = 1;
+const char* modes[3] = { "Force Center Lock", "Lock Border", "Right Click Lock" };
 
 std::string convert(wchar_t* lab) {
     std::wstring ws(lab);
@@ -149,6 +150,26 @@ void fixCursor(HWND handle)
             }
         }
     }
+    else if (mode == 3)
+    {
+        POINT p;
+        if (GetCursorPos(&p))
+        {
+            if (ScreenToClient(handle, &p))
+            {
+                RECT rect = { NULL };
+                if (GetWindowRect(robloxHWND, &rect)) {
+                    POINT realP;
+                    if (GetCursorPos(&realP))
+                    {
+                        while (GetAsyncKeyState(VK_RBUTTON)) {
+                            SetCursorPos(realP.x, realP.y);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 void init()
@@ -181,6 +202,8 @@ void init()
     std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
     std::cout << KYEL;
     std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;
+    std::cout << KRED;
+    std::cout << BOLD("Mode: ") << modes[mode-1] << std::endl;
     std::cout << KCYN;
     std::cout << BOLD("Enabled: ") << (isEnabled ? "Enabled" : "Disabled");
 }
@@ -231,11 +254,14 @@ int main()
     topBorder = static_cast<int>(ini.GetLongValue(section, "TopBorder", 70));
     bottomBorder = static_cast<int>(ini.GetLongValue(section, "BottomBorder", 20));
 
-    std::cout << KYEL << "1. Force Center Lock\n2. Lock Border\n\n";
-    std::cout << KCYN << "Input: ";
+    //std::cout << KYEL << "1. Force Center Lock\n2. Lock Border\n3. Right Click lock\n\n";
+    // Printing Strings stored in 2D array
+    for (int i = 0; i < 3; i++)
+        std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
+    std::cout << KCYN << "\nInput: ";
     std::cin >> mode;
 
-    if (mode == 1 || mode == 2)
+    if (mode == 1 || mode == 2 || mode == 3)
     {
         SetConsoleTitleA("MicrosoftRBX-CursorFix");
         std::thread mainThread(init);
