@@ -8,3 +8,5 @@
 /MicrosoftRBX-FPS/.vs/MicrosoftRBX-FPS
 *.h
 *.c
+/MicrosoftRBX-FPS/MicrosoftRBX-FPS/Release
+/MicrosoftRBX-FPS/Release
