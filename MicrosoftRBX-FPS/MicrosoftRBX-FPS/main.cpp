@@ -177,10 +177,10 @@ void printStatus()
     system("cls");
     std::cout << KBLU;
     std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
-    std::cout << KYEL;
-    std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;
     std::cout << KRED;
     std::cout << BOLD("Mode: ") << modes[mode - 1] << std::endl;
+    std::cout << KYEL;
+    std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;
     std::cout << KCYN;
     std::cout << BOLD("Enabled: ") << (isEnabled ? "Enabled" : "Disabled");
 }
