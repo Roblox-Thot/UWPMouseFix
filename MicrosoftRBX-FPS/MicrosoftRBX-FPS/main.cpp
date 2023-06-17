@@ -4,6 +4,7 @@
 #include <vector>
 #include <thread>
 #include "SimpleIni.h"
+#include "config.h"
 
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -28,16 +29,20 @@
 HWND robloxHWND;
 bool isEnabled = false;
 int letterbox = 5; // Just how much to move the mouse back by to prevent it from being stuck LUL
-int toggleKey = VK_INSERT;
-std::string toggleKeyName = "INSERT";
 
-int leftBorder = 30;
-int rightBorder = 20;
-int topBorder = 70;
-int bottomBorder = 20;
+// Config values \\
+
+int toggleKey;
+std::string toggleKeyName;
+int leftBorder;
+int rightBorder;
+int topBorder;
+int bottomBorder;
+
+//                \\
 
 int mode = 1;
-const char* modes[3] = { "Force Center Lock", "Lock Border", "Right Click Lock" };
+const char* modes[] = { "Force Center Lock", "Lock Border", "Right Click Lock" };
 
 std::string convert(wchar_t* lab) {
     std::wstring ws(lab);
@@ -257,6 +262,7 @@ int main()
     std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
     for (int i = 0; i < 3; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
+    std::cout << KYEL << 0 << ". Edit config" << "\n";
     std::cout << KCYN << "\nInput: ";
     std::cin >> mode;
 
@@ -271,7 +277,11 @@ int main()
         toggleThread.join();
         std::cin.get();
     }
-
-    std::cout << "Invalid option, please restart software." << std::endl;
-    return 0;
+    else if (mode == 0) {
+        configMain();
+    }
+    else {
+        std::cout << mode << " is an invalid option, please restart software." << std::endl;
+        return 0;
+    }
 }
