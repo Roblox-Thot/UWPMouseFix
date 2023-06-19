@@ -45,5 +45,18 @@
   </blockquote>
 </details>
 
+## Todo Statuses (once 100% new build will come out)
+- Built-in config editor (4/5)
+
+  [ ] Edit for ToggleKey
+  
+  [x] Edit for LeftBorder
+  
+  [x] Edit for RightBorder
+  
+  [x] Edit for TopBorder
+  
+  [x] Edit for BottomBorder
+
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
