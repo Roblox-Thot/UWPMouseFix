@@ -196,11 +196,13 @@
   <ItemGroup>
     <ClCompile Include="config.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="websocket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SimpleIni.h" />
+    <ClInclude Include="websocket.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />

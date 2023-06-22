@@ -5,6 +5,7 @@
 #include <thread>
 #include "SimpleIni.h"
 #include "config.h"
+#include "websocket.h"
 
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -30,7 +31,7 @@ HWND robloxHWND;
 bool isEnabled = false;
 int letterbox = 5; // Just how much to move the mouse back by to prevent it from being stuck LUL
 
-// Config values \\
+// Define Config values \\
 
 int toggleKey;
 std::string toggleKeyName;
@@ -39,10 +40,10 @@ int rightBorder;
 int topBorder;
 int bottomBorder;
 
-//                \\
+//                      \\
 
 int mode = 1;
-const char* modes[] = { "Force Center Lock", "Lock Border", "Right Click Lock" };
+const char* modes[] = { "Force Center Lock", "Lock Border", "Right Click Lock", "Websocket script"};
 
 std::string convert(wchar_t* lab) {
     std::wstring ws(lab);
@@ -260,7 +261,7 @@ int main()
 
     std::cout << KRED;
     std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
     //std::cout << KYEL << 0 << ". Edit config" << "\n";
     std::cout << KCYN << "\nInput: ";
@@ -276,6 +277,9 @@ int main()
         checkThread.join();
         toggleThread.join();
         std::cin.get();
+    }
+    else if (mode == 4) {
+        websocketMain();
     }
     else if (mode == 0) {
         //configMain();
