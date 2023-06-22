@@ -71,3 +71,6 @@ $RECYCLE.BIN/
 
 #IDFK what these are but i dont think you need them bitch
 /MicrosoftRBX-FPS/.vs/
+
+# Boost files yes the file path is aids idc im too lazy to fix rn
+/MicrosoftRBX-FPS/MicrosoftRBX-FPS/boost
