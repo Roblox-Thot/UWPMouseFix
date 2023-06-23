@@ -4,7 +4,7 @@
 
 /.vs
 /MicrosoftRBX-FPS/x64
-/MicrosoftRBX-FPS/Lib/*.h
+/MicrosoftRBX-FPS/MicrosoftRBX-FPS/Lib
 /MicrosoftRBX-FPS/MicrosoftRBX-FPS/x64
 /MicrosoftRBX-FPS/MicrosoftRBX-FPS/Release
 /MicrosoftRBX-FPS/MicrosoftRBX-FPS/Debug
