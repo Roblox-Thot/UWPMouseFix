@@ -5,7 +5,7 @@
 #include <fstream>
 #include <thread>
 #include <conio.h>
-#include "SimpleIni.h"
+#include "Lib/SimpleIni.h"
 #include "config.h"
 
 #define RST  "\x1B[0m"
