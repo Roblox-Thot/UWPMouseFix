@@ -39,7 +39,8 @@
 <details>
   <summary>click to expand</summary>
   <blockquote>
-    To build you will need to download <a href="https://github.com/brofield/simpleini">simpleini</a> and import SimpleIni.h and ConvertUTF.h<br>
+    To build you will need to download <a href="https://github.com/brofield/simpleini">simpleini</a> and import SimpleIni.h and ConvertUTF.h into a Lib folder<br>
+    and setup <a href="https://www.boost.org/">Boost Library</a> if you want to build the Webhook script<br>
     It should then be able to build.<br>
     If you want the blank config its at <a href="/config.example.ini">config.example.ini</a><br>
   </blockquote>
