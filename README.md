@@ -57,6 +57,15 @@
   [x] Edit for TopBorder
   
   [x] Edit for BottomBorder
+- Webhook mode (not on GH yet)
+
+  [x] Add webhook
+
+  [ ] Add loop to wach for changes
+
+  [ ] Make the script for Roblox
+
+  [ ] Upload to GH and make a Build
 
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
