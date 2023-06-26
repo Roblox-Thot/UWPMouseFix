@@ -19,7 +19,7 @@
 ## FAQ
 1. **Why is anti virus detecting it?**
 - It shouldn't because the application just sets the mouse to prevent moving out the window of Roblox.
-- But here is a virus scan anyway: [hybrid-analysis](https://www.hybrid-analysis.com/sample/bca470de73fd7c3f1fccc84c781d11456f81173071082755d85246690cd2cca2) and [VirusTotal](https://www.virustotal.com/gui/file/bca470de73fd7c3f1fccc84c781d11456f81173071082755d85246690cd2cca2)
+- But here is a virus scan anyway: [hybrid-analysis](https://www.hybrid-analysis.com/sample/13d8444374f058ec2a9d286e253910f93ceef0e73d05e10909138c41f9e6cfad) and [VirusTotal](https://www.virustotal.com/gui/file-analysis/MzM0YjA4MmQwNTI4YjEyMmFmMzdkOWI5NmYyNWQ5NzE6MTY4NzE0Njk2Mw==)
 
 2. **How to turn it on or off?**
 - Press `INSERT` key or what ever you set to turn on and off.
@@ -45,6 +45,20 @@
     If you want the blank config its at <a href="/config.example.ini">config.example.ini</a><br>
   </blockquote>
 </details>
+
+## Todo Statuses (once 100% new build will come out)
+- Built-in config editor (4/5)
+  - [ ] Edit for ToggleKey
+  - [x] Edit for LeftBorder
+  - [x] Edit for RightBorder
+  - [x] Edit for TopBorder
+  - [x] Edit for BottomBorder
+
+- Webhook mode (not on GH yet)
+  - [x] Add webhook
+  - [ ] Add loop to wach for changes
+  - [ ] Make the script for Roblox
+  - [ ] Upload to GH and make a Build
 
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
