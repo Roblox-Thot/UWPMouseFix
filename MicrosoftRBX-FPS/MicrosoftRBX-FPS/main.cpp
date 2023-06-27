@@ -265,7 +265,7 @@ int main()
     std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
     for (int i = 0; i < 3; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
-    //std::cout << KYEL << 0 << ". Edit config" << "\n";
+    std::cout << KYEL << 0 << ". Edit config" << "\n";
     std::cout << KCYN << "\nInput: ";
     std::cin >> mode;
 
@@ -288,7 +288,7 @@ int main()
     }
 #endif // websocket
     else if (mode == 0) {
-        //configMain();
+        configMain();
     }
     else {
         std::cout << mode << " is an invalid option, please restart software." << std::endl;

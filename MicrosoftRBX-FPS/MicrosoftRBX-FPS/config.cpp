@@ -94,6 +94,11 @@ void configMain() {
         switch (change) {
             case 1:
             {
+                std::cout << KWHT << "To edit keypresses you will have to edit the file by hand" << std::endl;
+                std::cout << KWHT << "I will add support here soonish" << std::endl;
+
+                std::system("pause");
+#ifdef keypressconfig
                 std::cout << KWHT << "Press any key..." << std::endl;
 
                 int newKey;
@@ -108,6 +113,7 @@ void configMain() {
                     }
                 }
                 ini.SetLongValue(section, "ToggleKey", newKey);
+#endif // keypressconfig
                 break;
             }
 

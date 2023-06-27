@@ -30,7 +30,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{3fdcd7cb-eab7-4755-ac25-297dcbcd5559}</ProjectGuid>
-    <RootNamespace>MicrosoftRBXFPS</RootNamespace>
+    <RootNamespace>UWPMouseFix</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>UWPMouseFix</ProjectName>
   </PropertyGroup>
