@@ -214,18 +214,11 @@ void init()
             {
                 robloxHWND = currentHWND;
                 printStatus();
-                //system("cls");
-                //std::cout << KMAG;
-                //std::cout << "Initialized!\nRoblox-Handle: " << currentHWND;
-                //break;
             }
         }
 
         Sleep(1000);
     }
-
-    //Sleep(1000);
-    //printStatus();
 }
 
 void check()
