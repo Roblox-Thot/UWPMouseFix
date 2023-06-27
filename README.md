@@ -32,6 +32,14 @@
 5. **Will the keybind support multi-key keybinds?**
 - Lmao na I'm way to lazy to add support for that.  Feel free to add code to do it tho its prob not hard.
 
+6. **How is this diffrent from [mengdeveloper's version](https://github.com/mengdeveloper/microsoftrbx-cursor-fix)?***
+- This one has
+  * Right click lock
+  * Auto grabs new roblox windows
+  * Config editor
+  * Keybind editor
+  * And soon more?
+
 <div align="center">
 <h1 id="roblox-mouse-fix">How to build</h1>
 </div>
@@ -46,8 +54,8 @@
 </details>
 
 ## Todo Statuses (once 100% new build will come out)
-- Built-in config editor (4/5)
-  - [ ] Edit for ToggleKey
+- Built-in config editor (In build 1.0.4 without ToggleKey)
+  - [ ] Edit for ToggleKey 
   - [x] Edit for LeftBorder
   - [x] Edit for RightBorder
   - [x] Edit for TopBorder
@@ -61,3 +69,4 @@
 
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
+
