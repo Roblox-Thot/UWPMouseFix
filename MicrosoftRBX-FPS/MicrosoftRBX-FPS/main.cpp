@@ -5,7 +5,7 @@
 #include <thread>
 #include "Lib/SimpleIni.h"
 #include "config.h"
-#include "websocket.h"
+//#include "websocket.h"
 
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -27,8 +27,8 @@
 #define BOLD(x) "\x1B[1m" x RST
 #define UNDL(x) "\x1B[4m" x RST
 
-//Remvove this comment to add the "option 4" websocket\\
-#define websocket
+//Remvove this comment to add the "option 4" websocket
+//#define websocket
 
 HWND robloxHWND;
 bool isEnabled = false;
@@ -75,8 +75,9 @@ std::string GetKeyText(UCHAR virtualKey)
         result = GetKeyNameTextA(scanCode << 16, szName, 128);
     }
     if (result == 0)
-        throw std::system_error(std::error_code(GetLastError(), std::system_category()),
-            "WinAPI Error occured.");
+        /*throw std::system_error(std::error_code(GetLastError(), std::system_category()),
+            "WinAPI Error occured.");*/
+        return GetKeyText(VK_END);
     return szName;
 }
 

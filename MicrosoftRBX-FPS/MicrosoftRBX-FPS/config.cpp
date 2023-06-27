@@ -4,7 +4,6 @@
 #include <vector>
 #include <fstream>
 #include <thread>
-#include <conio.h>
 #include "Lib/SimpleIni.h"
 #include "config.h"
 
