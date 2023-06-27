@@ -185,7 +185,12 @@ void printStatus()
 {
     system("cls");
     std::cout << KBLU;
-    std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
+    if (robloxHWND == NULL) {
+        std::cout << BOLD("Please click on a Roblox Window") << std::endl;
+    }
+    else {
+        std::cout << BOLD("Roblox-HWND: ") << robloxHWND << std::endl;
+    }
     std::cout << KRED;
     std::cout << BOLD("Mode: ") << modes[mode - 1] << std::endl;
     std::cout << KYEL;
@@ -205,21 +210,22 @@ void init()
         if (currentHWND)
         {
             std::string getTitle = getWindowTitle(currentHWND);
-            if (getTitle == "Roblox")
+            if (getTitle == "Roblox" && robloxHWND != currentHWND)
             {
                 robloxHWND = currentHWND;
-                system("cls");
-                std::cout << KMAG;
-                std::cout << "Initialized!\nRoblox-Handle: " << currentHWND;
-                break;
+                printStatus();
+                //system("cls");
+                //std::cout << KMAG;
+                //std::cout << "Initialized!\nRoblox-Handle: " << currentHWND;
+                //break;
             }
         }
 
         Sleep(1000);
     }
 
-    Sleep(1000);
-    printStatus();
+    //Sleep(1000);
+    //printStatus();
 }
 
 void check()
@@ -276,6 +282,7 @@ int main()
         std::thread mainThread(init);
         std::thread checkThread(check);
         std::thread toggleThread(toggle);
+        printStatus();
         mainThread.join();
         checkThread.join();
         toggleThread.join();

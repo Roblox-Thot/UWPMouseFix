@@ -1,4 +1,5 @@
-﻿#include <boost/beast/core.hpp>
+﻿#ifdef websocket
+#include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <thread>
 #include <vector>
@@ -202,3 +203,4 @@ void websocketMain()
     mouseThread.join();
     websocketThread.join();
 }
+#endif
