@@ -19,6 +19,7 @@
 ## FAQ
 1. **Why is anti virus detecting it?**
 - It shouldn't because the application just sets the mouse to prevent moving out the window of Roblox.
+- But if you can find out what is causing like 2 AV to flag it that would be dope
 
 2. **How to turn it on or off?**
 - Press `INSERT` key or what ever you set to turn on and off.
