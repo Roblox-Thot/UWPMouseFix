@@ -54,10 +54,10 @@
   - [x] Edit for TopBorder
   - [x] Edit for BottomBorder
 
-- Webhook mode (not on GH yet)
+- Webhook mode (on pause till a way to connect comes out)
   - [x] Add webhook
-  - [ ] Add loop to wach for changes
-  - [ ] Make the script for Roblox
+  - [x] Add loop to wach for changes
+  - [x] Make the script for Roblox
   - [ ] Upload to GH and make a Build
 
 ## ­

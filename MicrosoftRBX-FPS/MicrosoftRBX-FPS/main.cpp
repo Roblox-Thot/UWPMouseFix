@@ -27,6 +27,9 @@
 #define BOLD(x) "\x1B[1m" x RST
 #define UNDL(x) "\x1B[4m" x RST
 
+//Remvove this comment to add the "option 4" websocket\\
+#define websocket
+
 HWND robloxHWND;
 bool isEnabled = false;
 int letterbox = 5; // Just how much to move the mouse back by to prevent it from being stuck LUL
@@ -261,7 +264,7 @@ int main()
 
     std::cout << KRED;
     std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 3; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
     //std::cout << KYEL << 0 << ". Edit config" << "\n";
     std::cout << KCYN << "\nInput: ";
@@ -278,9 +281,12 @@ int main()
         toggleThread.join();
         std::cin.get();
     }
+#ifdef websocket
     else if (mode == 4) {
+        SetConsoleTitleA("UWPMouseFix");
         websocketMain();
     }
+#endif // websocket
     else if (mode == 0) {
         //configMain();
     }
