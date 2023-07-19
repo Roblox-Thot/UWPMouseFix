@@ -38,7 +38,7 @@
   * Right click lock
   * Auto grabs new roblox windows
   * Config editor
-  * Keybind editor
+  * Keybind editor (in config file not built-in yet)
   * And soon more?
 
 <div align="center">
