@@ -1,7 +1,7 @@
 <div align="center">
 <h1 id="roblox-mouse-fix">UWP Mouse Fix 🐭</h1>
-<img src="https://img.shields.io/github/downloads/Roblox-Thot/UWPMouseFix/total.svg?style=for-the-badge"> <img src="https://img.shields.io/github/last-commit/Roblox-Thot/UWPMouseFix?style=for-the-badge"><br>
-<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/Roblox-Thot/UWPMouseFix?style=for-the-badge"> <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/Roblox-thot/UWPMouseFix?style=for-the-badge">
+<img src="https://img.shields.io/github/downloads/Roblox-Thot/UWPMouseFix/total.svg?style=for-the-badge"> <img src="https://img.shields.io/github/downloads/Roblox-Thot/UWPMouseFix/latest/total?style=for-the-badge&label=Downloads%20For%20Latest"> <br>
+<img alt="GitHub commits since latest release (by SemVer including pre-releases)" src="https://img.shields.io/github/commits-since/Roblox-Thot/UWPMouseFix/latest?style=for-the-badge&label=Commits%20Since%20Latest"> <img src="https://img.shields.io/github/last-commit/Roblox-Thot/UWPMouseFix?style=for-the-badge">
 </div>
 
 ## Usage
@@ -19,6 +19,7 @@
 ## FAQ
 1. **Why is anti virus detecting it?**
 - It shouldn't because the application just sets the mouse to prevent moving out the window of Roblox.
+- But if you can find out what is causing like 2 AV to flag it that would be dope
 
 2. **How to turn it on or off?**
 - Press `INSERT` key or what ever you set to turn on and off.
@@ -37,7 +38,7 @@
   * Right click lock
   * Auto grabs new roblox windows
   * Config editor
-  * Keybind editor
+  * Keybind editor (in config file not built-in yet)
   * And soon more?
 
 <div align="center">
