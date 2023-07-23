@@ -202,14 +202,16 @@ void printStatus()
 
 void init()
 {
+    HWND oldHWND = {};
     // FindWindow is so fucked because it has none for this so i had to use this method <3
     std::cout << KRED;
     std::cout << "Please open Microsoft Roblox Client and click somewhere.";
     while (true)
     {
         HWND currentHWND = GetForegroundWindow();
-        if (currentHWND)
+        if (currentHWND != oldHWND)
         {
+            oldHWND = currentHWND;
             std::string getTitle = getWindowTitle(currentHWND);
             if (getTitle == "Roblox" && robloxHWND != currentHWND)
             {
@@ -226,7 +228,7 @@ void check()
 {
     while (true)
     {
-        while (ShowCursor(false) >= 0);
+        //while (ShowCursor(false) >= 0);
         if (isRbxActive() && isEnabled)
         {
             fixCursor(robloxHWND);
