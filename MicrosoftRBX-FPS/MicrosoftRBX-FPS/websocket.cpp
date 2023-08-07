@@ -1,5 +1,4 @@
-﻿#ifdef websocket
-#include <boost/beast/core.hpp>
+﻿#include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <thread>
 #include <vector>
@@ -33,21 +32,14 @@ bool rightClickDown;
 bool inFirstPerson;
 bool roActive;
 HWND curHWND;
-//Remove this comment to beable to see the output in time\\
 
 #define outDebug
 
 void printGayStatus()
 {
     system("cls");
-    /*std::cout << KBLU;
-    std::cout << BOLD("Roblox-HWND: ") << curHWND << std::endl;*/
     std::cout << KRED;
     std::cout << BOLD("Mode: ") << "Websocket script" << std::endl;
-    /*std::cout << KYEL;
-    std::cout << BOLD("Keybind: ") << toggleKeyName << std::endl;*/
-    //std::cout << KCYN;
-    //std::cout << BOLD("Enabled: ") << (isEnabled ? "Enabled" : "Disabled");
 #ifdef outDebug
     std::cout << KWHT;
     std::cout << BOLD("rightClickDown: ") << rightClickDown << std::endl;
@@ -58,8 +50,8 @@ void printGayStatus()
 }
 
 void mice() {
-    while (1 + 2 == 3) {
-        if ((rightClickDown || inFirstPerson) && roActive) {
+    while (1 + 2 == 3) {// I could do True but idk i like math
+        if ((rightClickDown || inFirstPerson) && roActive) { // Roblox MUST be acive for the loop (mostly just to stop strange glitches if they happen)
             // Reusing code from the right click lock since lazy
             POINT p;
             curHWND = GetForegroundWindow();
@@ -100,8 +92,7 @@ std::vector<std::string> splitString(const std::string& inputString)
 void handleMyBitchAss(std::string data) {
     auto bttData = splitString(data);
     // How data MAY be held idk yet \\
-   //                                \\
-      Right click? | FP | win active
+   // Right click? | FP | win active \\
 
     //#ifdef DEBUG
     //    for (const auto& str : bttData)
@@ -113,7 +104,6 @@ void handleMyBitchAss(std::string data) {
     inFirstPerson = bttData[1] == "true" ? true : false;
     roActive = bttData[2] == "true" ? true : false;
     printGayStatus();
-
 }
 
 // stole most this this from https://github.com/PhysicsX/ExampleCode/blob/master/Cpp/websocket.cpp ngl because C++ websocets are strange af
@@ -160,20 +150,22 @@ void startWebsocket(){
 
             // Accept the websocket handshake
             ws.accept();
+            try {
+                while (true)
+                {
+                    // This buffer will hold the incoming message
+                    beast::flat_buffer buffer;
 
-            while (true)
-            {
-                // This buffer will hold the incoming message
-                beast::flat_buffer buffer;
+                    // Read a message
+                    ws.read(buffer);
 
-                // Read a message
-                ws.read(buffer);
-
-                auto out = beast::buffers_to_string(buffer.cdata());
-                handleMyBitchAss(out);
-                // im tired as shit been up 19+ hr please give me help and hope that anything will make sense in the morning
-
-                //ws.write(buffer.data());
+                    auto out = beast::buffers_to_string(buffer.cdata());
+                    handleMyBitchAss(out);
+                    // im tired as shit been up 19+ hr please give me help and hope that anything will make sense in the morning
+                }
+            }
+            catch(...){
+                // lazy ass catch that fixes closing connections sometimes crashing the "server"
             }
         };
 
@@ -203,4 +195,3 @@ void websocketMain()
     mouseThread.join();
     websocketThread.join();
 }
-#endif

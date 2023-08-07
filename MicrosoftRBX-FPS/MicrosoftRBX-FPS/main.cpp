@@ -5,7 +5,6 @@
 #include <thread>
 #include "Lib/SimpleIni.h"
 #include "config.h"
-//#include "websocket.h"
 
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -28,7 +27,11 @@
 #define UNDL(x) "\x1B[4m" x RST
 
 //Remvove this comment to add the "option 4" websocket
-//#define websocket
+#define websocket
+#ifdef websocket
+#include "websocket.h"
+#endif // DEBUG
+
 
 HWND robloxHWND;
 bool isEnabled = false;
@@ -228,7 +231,7 @@ void check()
 {
     while (true)
     {
-        //while (ShowCursor(false) >= 0);
+        while (ShowCursor(false) >= 0);
         if (isRbxActive() && isEnabled)
         {
             fixCursor(robloxHWND);
@@ -266,7 +269,7 @@ int main()
 
     std::cout << KRED;
     std::cout << BOLD("Please enter one of mode numbers.") << "\n" << std::endl;
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
         std::cout << KYEL << i+1 << ". " << modes[i] << "\n";
     std::cout << KYEL << 0 << ". Edit config" << "\n";
     std::cout << KCYN << "\nInput: ";
