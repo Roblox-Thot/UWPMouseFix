@@ -37,6 +37,7 @@
 - This one has
   * Right click lock
   * Auto grabs new roblox windows
+  * Websocket mode
   * Config editor
   * Keybind editor (in config file not built-in yet)
   * And soon more?
@@ -48,7 +49,7 @@
   <summary>click to expand</summary>
   <blockquote>
     To build you will need to download <a href="https://github.com/brofield/simpleini">simpleini</a> and import SimpleIni.h and ConvertUTF.h into a Lib folder<br>
-    and setup <a href="https://www.boost.org/">Boost Library</a> if you want to build the Webhook script<br>
+    and setup <a href="https://www.boost.org/">Boost Library</a> if you want to build the Websocket script (else just remove all WS shit)<br>
     It should then be able to build.<br>
     If you want the blank config its at <a href="/config.example.ini">config.example.ini</a><br>
   </blockquote>
@@ -66,7 +67,7 @@
   - [x] Add webhook
   - [x] Add loop to wach for changes
   - [x] Make the script for Roblox
-  - [ ] Upload to GH and make a Build
+  - [x] Upload to GH and make a Build
 
 ## ­
 https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
