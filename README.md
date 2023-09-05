@@ -4,6 +4,16 @@
 <img alt="GitHub commits since latest release (by SemVer including pre-releases)" src="https://img.shields.io/github/commits-since/Roblox-Thot/UWPMouseFix/latest?style=for-the-badge&label=Commits%20Since%20Latest"> <img src="https://img.shields.io/github/last-commit/Roblox-Thot/UWPMouseFix?style=for-the-badge">
 </div>
 
+<details>
+  <summary>Example of WebSocket Mode</summary>
+  <blockquote>
+
+https://github.com/Roblox-Thot/UWPMouseFix/assets/67937010/752da74e-f503-44f8-b787-12e8cca23ede
+
+  </blockquote>
+</details>
+
+
 ## Usage
 1. Download the zip by downloading the [latest zip](https://github.com/Roblox-Thot/microsoftrbx-cursor-fix/releases/latest)
 2. Extract the zip and rename `config.example.ini` to `config.ini`
@@ -68,7 +78,3 @@
   - [x] Add loop to wach for changes
   - [x] Make the script for Roblox
   - [x] Upload to GH and make a Build
-
-## ­
-https://github.com/mengdeveloper/microsoftrbx-cursor-fix/assets/53615275/79108f58-75f3-485b-9bfe-c2f2a98e348f
-
