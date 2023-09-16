@@ -30,3 +30,8 @@ end)
 UserInputService.WindowFocused:Connect(function()
 	data.winActive = true
 end)
+
+-- Teleport glitch prevention
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(state)
+	data.firstPerson, data.rightDown, data.winActive=false,false,false
+end)
