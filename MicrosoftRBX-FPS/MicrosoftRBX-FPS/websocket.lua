@@ -1,4 +1,5 @@
-local ws = WebSocket.connect("ws://127.0.0.1:58008")
+local sus, ws = pcall(WebSocket.connect,"ws://127.0.0.1:58008")
+if not sus then return "" end -- Prevents errors (and games that ban bc of it kek)
 local UserInputService = game:GetService("UserInputService")
 local data = {}
 local proxy = {} 
