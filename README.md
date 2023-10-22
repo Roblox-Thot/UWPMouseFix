@@ -68,6 +68,7 @@ https://github.com/Roblox-Thot/UWPMouseFix/assets/67937010/752da74e-f503-44f8-b7
 ## Todo Statuses (once 100% new build will come out)
 - Built-in config editor (In build 1.0.4 without ToggleKey)
   - [ ] Edit for ToggleKey 
+  - [ ] Replace the Window name check with a Window file check (fix for fluster/any custom names)
   - [x] Edit for LeftBorder
   - [x] Edit for RightBorder
   - [x] Edit for TopBorder
